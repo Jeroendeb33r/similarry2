@@ -1,0 +1,10 @@
+ErrorDocument 404 /subPages/404.html
+
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^detail\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ detail.php#$1 [PT,L]
